@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of Egypt?",
+    "answers": ["Alex", "Giza", "Cairo", "Luxor"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 2,
+    "question": "Which country is home to the kangaroo?",
+    "answers": ["Australia", "Austria", "South Africa", "Kenya"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 3,
+    "question": "What is the hardest natural substance on Earth?",
+    "answers": ["Gold", "Iron", "Granite", "Diamond"],
+    "correct_answer_index": 3
+  },
+  {
+    "id": 4,
+    "question": "Which gas do plants absorb from the atmosphere?",
+    "answers": ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 5,
+    "question": "How many bones are in an adult human body?",
+    "answers": ["106", "306", "206", "156"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 6,
+
+    "question": "Who's defeated Peak Edition of Tamer El-Gayar in 1945",
+    "answers": [
+      "Adolf Hitless",
+      "William Shakespeare",
+      "زعتر زعتوري",
+      "Soul of Cinder"
+    ],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 7,
+    "question": "Which planet is closest to the Sun?",
+    "answers": ["Mercury", "Venus", "Mars", "Earth"],
+    "correct_answer_index": 0
+  },
+  {
+    "id": 8,
+    "question": "What is the currency used in Japan?",
+    "answers": ["Won", "Yen", "Yuan", "Dollar"],
+    "correct_answer_index": 1
+  },
+  {
+    "id": 9,
+    "question": "What is the chemical symbol for water?",
+    "answers": ["CO2", "O2", "H2O", "NaCl"],
+    "correct_answer_index": 2
+  },
+  {
+    "id": 10,
+    "question": "Which continent is the Sahara Desert located in?",
+    "answers": ["Asia", "Australia", "Africa", "South America"],
+    "correct_answer_index": 2
+  }
+]

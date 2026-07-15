@@ -1,0 +1,63 @@
+Question on submit [function submitQ()]:
+  - if Question is the first: previous button has display: none
+  - if wrong: Correct option -> background green, Wrong option -> background red, correct-counter value stays as it is (does not decrease)
+  - if right: Correct option -> background blue, correct-counter value decreases by 1 (wrong-counter = length - blue correct Questions)
+  - after 2 seconds: redirects to the next json object Question automatically
+  - During these 2 seconds: All options, Next, and Previous buttons are disabled (force poor user to wait), fronzen the entire page in this period
+
+Selection & Clicking Logic:
+  - Click option 1 -> background matches hover effect, next button transforms to modern green submit button
+  - Click option 2 -> background matches hover, option 1 goes back to normal (remove semi-hover class)
+  - Click option 2 again -> semi-hover class removed, submit button goes back to next button
+  - Click option 2 -> click submit button -> run submitQ(), then setTimeout 2 seconds and redirect
+
+Navigation Logic:
+  - Previous click -> changes elements to the previous question data in JSON, showing their submitted results (if it was correct and option is blue, it displays as true when back to it)
+  - Next click -> correct-counter value stays as it is (only changes elements)
+  - correct-counter value decreases ONLY when submitting a correct answer
+  - If a question is already submitted: options backgrounds are colored, you cannot change your answer, and hover effects are disabled
+
+  ====================
+
+  - Fetchs Data from json file
+
+  example in json file :
+   [{
+    "id": 1,
+    "question": "What is the capital of Egypt?",
+    "answers": ["Alex", "Giza", "Cairo", "Luxor"],
+    "correct_answer_index": 2
+    },]
+
+  if activeLi was in an option its index is 2 -> true, else -> wrong
+
+  - hover on option
+  - click on option
+  - click on another option 
+  - click on the same option
+  - submit a correct optoin
+  - submit a wrong optoin
+  - click on an option after already submit
+  - hover on an option after already submit
+
+  - using next before click on an option
+  - using next (submit) after click on an option
+  - next display in the last Question (disabled or has display: none or excanged with text "send" cssText = "color: red;")
+
+  - using previous
+  - previous display in the first Question
+
+  - time-counter (using setInterval) -> once time hits 0, do the exact same logic as submitting the last question and open the results window immediately
+
+  - Questions left (using length of Questions object in json file and a counter increases by next (or submit) or decrease by previous)
+
+  - save correct-counter value in sessionStorage, keep current Question even after load, keep submited Question as it was before load (Chosen)
+
+  - score -> (length - correct-counter value) / length
+  - after submit the last Question, remove all elements, show the results window, in this window it only says `you answered ${number} from ${numbers length} Questions in ${total-time - time-remaining} time, your score is ${score} your rate is ${condition}`
+
+  - When Reset button is clicked inside the results window: clear all sessionStorage values and redirect to the first question
+
+ =============
+
+  bonus : current question and Selected option saved in sessionStorage
