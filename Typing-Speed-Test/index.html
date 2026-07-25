@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Speed Test</title>
+    <link rel="preconnect" href="https://googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <!-- <link
+      href="https://googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game">
+      <div class="name">Typing Speed Test</div>
+      <div class="container">
+        <div class="message">
+          You Level is
+          <span class="lvl"></span>, You Have
+          <span class="seconds"></span> Seconds For Each Word
+        </div>
+        <div class="start">Start Playing</div>
+        <div class="the-word"></div>
+        <input type="text" class="input" placeholder="Tab 'Enter' to submit" />
+        <div class="upcoming-words select-level-box">
+          <div class="lvl-btn Easy" data-lvl="Easy">Easy</div>
+          <div class="lvl-btn Normal active" data-lvl="Normal">Normal</div>
+          <div class="lvl-btn Hard" data-lvl="Hard">Hard</div>
+        </div>
+
+        <div class="control">
+          <div class="time">Time Left: <span></span>-Seconds</div>
+          <div class="score">
+            Score: <span class="got">0</span> From <span class="total"></span>
+          </div>
+        </div>
+
+        <div class="finish">
+          <div class="finish-content">
+            <h2>Game Over</h2>
+            <div class="stat">Your Score: <span class="value">0</span></div>
+            <button class="restart-btn">Play Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

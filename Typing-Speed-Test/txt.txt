@@ -1,0 +1,2 @@
+// score by the word completed (bonus: use WPM instead)
+// if a word doesn' match the current index word -> End the Test (bonus: do something more realistic, like modern speed tests!!)
