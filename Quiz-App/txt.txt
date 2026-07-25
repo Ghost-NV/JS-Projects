@@ -54,7 +54,7 @@ Navigation Logic:
   - save correct-counter value in sessionStorage, keep current Question even after load, keep submited Question as it was before load (Chosen)
 
   - score -> (length - correct-counter value) / length
-  - after submit the last Question, remove all elements, show the results window, in this window it only says `you answered ${number} from ${numbers length} Questions in ${total-time - time-remaining} time, your score is ${score} your rate is ${condition}`
+  - After submit the last Question, show result page, in this window it only tells time and correct-counter
 
   - When Reset button is clicked inside the results window: clear all sessionStorage values and redirect to the first question
 
