@@ -1,0 +1,60 @@
+### ===> branch
+
+1 JSON file contains a list of words, Each word has a category and a hint
+1 red dot & ctrl + delete key -> close current tab (fix this later)
+1 yellow dot & ctrl + R key -> refresh page
+// green dot & ctrl + enter key -> reset game
+// on new session (refresh) -> pick a new word, its category and hint, make word slots for each letter
+
+### on start play -> add a blue dot near the "game.js" span, change "session is: inactive" to "session is: active" to "session is: active"
+
+### onclick any letter (using keypress or buttons) 
+  -> add "disabled" attribute to key at all, check if letter is correct
+  if wrong -> 
+    - pop 1 balloon
+    - add "is-wrong is-disabled" class
+    - show: Wrong! "letter" is not in the word
+
+    
+    - tries++
+  if correct ->
+    - add the letter to the word slots true position (we will cover how to do this)
+    - add "is-correct is-disabled" class
+    - show: Good guess! "letter" is in the word
+
+
+
+### In The End
+    - all keys are still in their status (is-correct or is-wrong)
+    - all keys must have "is-disabled" class and "disabled" attribute
+    - all word slots are completely filled with the true letters at all even if correct.. that means adding "is-filled" class to the word slots
+    - check how the letter slots are filled, fully correct or not
+  if all letters are correct -> 
+    - change "session is: active" to "session is: WIN"
+    - show "You won! The word is: word"
+
+  else if tries reaches maximum ->
+    - change "session is: active" to "session is: LOSE"
+    - tries must be filled (number is 6 as balloons), all 6 balloons are pop
+    - show: "Game Over! The word was 'word'"
+
+  - then show "Press RESET to play again..."
+
+// how the balloon pops -> add a class "pop" to the balloon
+
+// the logic of the word slots 
+  -> all letters input/output are in uppercase
+  -> for each letter, add a letter-slot
+  -> on user input, check if the word contains the inputed letter (check the "onclick letter" branch)
+  -> checking every char in the word, if the word contains that letter then add it to the letter slot precisely by its position
+    you'd add a for loop checks the letters in the word and the input .. 
+    if wrong, then be... but to handle the case of multiple letters -> if correct, add the input for each letter slot char position contains this true inputed letter especially, also add "is-filled" class to the letter slot(s)
+  -> after every guess, do "In The End" branch check
+
+// the logic of reset button function ->
+  -> choose a new random word, with its category and hint
+  -> removing "pop" class from all balloons
+  -> removing "is-correct", "is-wrong", "is-disabled" and "disabled" attribute classes from all keys
+  -> reset the tries counter to 0
+  -> show "session is: inactive", remove blue dot near the "game.js" span
+  -> removing "is-filled" class from all letter slots, all of them are empty

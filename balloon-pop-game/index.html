@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balloon.exe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <header class="editor-bar" aria-hidden="true">
+        <div class="editor-bar__dots">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+        </div>
+        <div class="editor-bar__tab">
+          <span class="editor-bar__tab-name">game.js</span>
+        </div>
+        <div class="editor-bar__meta">UTF-8 - JS</div>
+      </header>
+
+      <main class="board">
+        <section class="board__head">
+          <h1 class="title">
+            <p class="eyebrow">// session is: <span id="activity">---</span></p>
+            <span class="title__bracket"></span>Balloon<span
+              class="title__bracket"
+            ></span>
+          </h1>
+          <p class="subtitle">Guess or POP, 'Enter' to reset, 'Del' to close</p>
+          <div class="board__info">
+            <p class="category-name" id="category-name">
+              Category: <span id="category-display">---</span>
+            </p>
+            <p class="hint-text" id="hint-display">
+              Hint: <span id="hint-content">---</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="rig" aria-label="remaining tries">
+          <div class="rig__string" aria-hidden="true"></div>
+          <ul class="balloons" id="balloons-list">
+            <li class="balloon balloon--mint" data-life="1">
+              <span class="balloon__body">
+                <span class="balloon__shine"></span>
+              </span>
+              <span class="balloon__knot"></span>
+              <span class="balloon__thread"></span>
+            </li>
+            <li class="balloon balloon--cyan" data-life="2">
+              <span class="balloon__body">
+                <span class="balloon__shine"></span>
+              </span>
+              <span class="balloon__knot"></span>
+              <span class="balloon__thread"></span>
+            </li>
+            <li class="balloon balloon--slate" data-life="3">
+              <span class="balloon__body">
+                <span class="balloon__shine"></span>
+              </span>
+              <span class="balloon__knot"></span>
+              <span class="balloon__thread"></span>
+            </li>
+            <li class="balloon balloon--steel" data-life="4">
+              <span class="balloon__body">
+                <span class="balloon__shine"></span>
+              </span>
+              <span class="balloon__knot"></span>
+              <span class="balloon__thread"></span>
+            </li>
+            <li class="balloon balloon--amber" data-life="5">
+              <span class="balloon__body">
+                <span class="balloon__shine"></span>
+              </span>
+              <span class="balloon__knot"></span>
+              <span class="balloon__thread"></span>
+            </li>
+            <li class="balloon balloon--smoke" data-life="6">
+              <span class="balloon__body">
+                <span class="balloon__shine"></span>
+              </span>
+              <span class="balloon__knot"></span>
+              <span class="balloon__thread"></span>
+            </li>
+          </ul>
+        </section>
+
+        <p class="status-line" id="status-line">
+          <span class="status-line__prompt">>_</span>
+          <span class="status-line__text" id="status-text"
+            >Waiting for the first guess...
+          </span>
+          <span class="status-line__cursor" aria-hidden="true"></span>
+        </p>
+
+        <section class="word-display" aria-label="hidden word">
+          <div class="word-display__slots" id="word-slots"></div>
+        </section>
+
+        <section class="keyboard" id="keyboard" aria-label="letters board">
+          <div class="keyboard__row">
+            <button class="key" type="button" data-letter="Q">Q</button>
+            <button class="key" type="button" data-letter="W">W</button>
+            <button class="key" type="button" data-letter="E">E</button>
+            <button class="key" type="button" data-letter="R">R</button>
+            <button class="key" type="button" data-letter="T">T</button>
+            <button class="key" type="button" data-letter="Y">Y</button>
+            <button class="key" type="button" data-letter="U">U</button>
+            <button class="key" type="button" data-letter="I">I</button>
+            <button class="key" type="button" data-letter="O">O</button>
+            <button class="key" type="button" data-letter="P">P</button>
+          </div>
+          <div class="keyboard__row">
+            <button class="key" type="button" data-letter="A">A</button>
+            <button class="key" type="button" data-letter="S">S</button>
+            <button class="key" type="button" data-letter="D">D</button>
+            <button class="key" type="button" data-letter="F">F</button>
+            <button class="key" type="button" data-letter="G">G</button>
+            <button class="key" type="button" data-letter="H">H</button>
+            <button class="key" type="button" data-letter="K">K</button>
+            <button class="key" type="button" data-letter="J">J</button>
+            <button class="key" type="button" data-letter="L">L</button>
+            <button class="key" type="button" data-letter=";">;</button>
+            <button class="key" type="button" data-letter="'">'</button>
+          </div>
+          <div class="keyboard__row">
+            <button class="key" type="button" data-letter="Z">Z</button>
+            <button class="key" type="button" data-letter="X">X</button>
+            <button class="key" type="button" data-letter="C">C</button>
+            <button class="key" type="button" data-letter="V">V</button>
+            <button class="key" type="button" data-letter="B">B</button>
+            <button class="key" type="button" data-letter="N">N</button>
+            <button class="key" type="button" data-letter="M">M</button>
+            <button class="key" type="button" data-letter=",">,</button>
+            <button class="key" type="button" data-letter=".">.</button>
+          </div>
+        </section>
+
+        <footer class="board__footer">
+          <p class="build-tag" id="attempts-counter">
+            tries: <span id="attempts-count">0</span>
+          </p>
+          <button class="btn btn--ghost" type="button" id="restart-btn">
+            <span class="btn__icon" aria-hidden="true">↺</span>
+            reset
+          </button>
+        </footer>
+      </main>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
